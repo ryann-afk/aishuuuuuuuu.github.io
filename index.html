@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine 💕</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Cinematic intro -->
+ <div id="intro-screen">
+  <div class="intro-content">
+    <h1 class="intro-title">For Someone Special 💖</h1>
+    <p class="intro-sub">I made something just for you…</p>
+    <button class="enter-btn" onclick="startExperience()">Enter ✨</button>
+  </div>
+</div>
+
+
+
+<audio id="bgMusic" src="sounds/bgmusic.mp3" loop></audio>
+<audio id="clickSound" src="sounds/click.mp3"></audio>
+<audio id="kissSound" src="sounds/kiss.mp3"></audio>
+
+<div class="hearts"></div>
+<div id="home-btn" onclick="goHome()">🏠 Home</div>
+
+<div class="page" id="main-page">
+  <h1>Hey My Love 💖</h1>
+  <h2>Will you be my Valentine? 💘</h2>
+
+  <div class="buttons">
+    <button onclick="yesClicked()">Yes 💕</button>
+    <button id="no-btn" onmouseover="moveNo()">No 😜</button>
+  </div>
+</div>
+
+<div class="page hidden" id="surprise-page">
+  <h1>Pick a Surprise babyy 🎁</h1>
+ <div class="boxes-section">
+   <div class="boxes">
+      <div class="box" onclick="openBox('letter')">💌</div>
+      <div class="box" onclick="openBox('memories')">📸</div>
+      <div class="box" onclick="openBox('kiss')">💋</div>
+      <div class="box" onclick="openBox('voice')">🎤</div>
+   </div>
+  </div>
+  <div class="features-section">
+    <h2 class="section-title">More Surprises ✨</h2>
+     <div class="buttons-grid">
+
+      <button onclick="loveMeter()">💓 Love Meter</button>
+      <button onclick="flowerRain()">🌹 Flower Rain</button>
+      <button onclick="secretMessage()">🔐 Secret</button>
+      <button onclick="countdown()">⏳ Anniversary</button>
+      <button onclick="coupleQuiz()">🎮 Couple Quiz</button>
+      <button onclick="showTimeline()">📅 Our Timeline</button>
+      <button onclick="openWhen()">💌 Open When Letters</button>
+      <button onclick="startLoveGame()">🎯 Love Catch Game</button>
+      <button id="final-btn" class="hidden" onclick="showFinalSurprise()"> One Last Surprise 💖</button>
+
+    </div>
+</div>
+  <button id="toggleBgMusic">Mute</button>
+
+  <p class="subtitle">I made this just for you aishuuuu…</p>
+
+
+  <div id="content" class="glass"></div>
+  <div id="timeline" class="hidden"></div>
+ 
+
+</div>
+
+<div id="musicPlayer" class="music-player glass">
+  <div class="player-content">
+    <span class="player-title">🎵 Song</span>
+    <button class="play-btn" onclick="toggleMusic()">▶</button>
+  </div>
+  <audio id="loveSong" src="sounds/song.mp3"></audio>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+

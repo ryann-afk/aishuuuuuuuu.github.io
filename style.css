@@ -1,0 +1,807 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym47.cur'), auto;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #ff9acb, #ff2f92);
+  overflow-x: hidden;
+  color: white;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 0 40px rgba(255,255,255,0.25);
+}
+
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hidden { display: none; }
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow:
+    0 0 10px #ff4da6,
+    0 0 20px #ff4da6,
+    0 0 40px #ff85c2;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: white;
+  text-shadow:
+    0 0 8px rgba(0,0,0,0.6),
+    0 0 12px #ff4da6;
+}
+p, #content, .caption-text {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+/* Surprise buttons layout */
+#surprise-page button {
+  width: 180px;
+  height: 60px;
+  margin: 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #ff4da6, #ff85c2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+#surprise-page button:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+/* Grid container for all feature buttons */
+#surprise-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#surprise-page .buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  width: 90%;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+
+.buttons button {
+  padding: 15px 35px;
+  font-size: 1.3rem;
+  margin: 15px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(45deg, #ff4da6, #ff85c2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.buttons button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+
+
+
+.box {
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+
+#content {
+  margin-top: 30px;
+  padding: 25px;
+  width: 95%;
+  max-width: 650px;
+}
+
+
+#home-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #ff9acb;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  z-index: 10;
+}
+
+.floating-heart {
+  position: fixed;
+  font-size: 22px;
+  animation: floatUp 8s linear infinite;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(110vh); }
+  to { transform: translateY(-10vh); }
+}
+
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-100vh); }
+}
+
+/* SLIDESHOW */
+.slideshow-container {
+  position: relative;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+/* Heart Frame */
+.heart-frame {
+  width: 240px;
+  height: 240px;
+  margin: auto;
+  background: url("images/heart-frame.png") no-repeat center/contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart-frame img {
+  width: 180px;
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+/* Slide captions */
+.caption-text {
+  font-size: 1.2rem;
+  color: #ff2f92;
+  font-weight: bold;
+  margin-top: 8px;
+  text-shadow: 1px 1px white;
+}
+
+/* Prev/Next */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 12px;
+  margin-top: -22px;
+  color: #ff2f92;
+  font-size: 24px;
+}
+
+.prev:hover, .next:hover {
+  color: #ff6fa3;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+/* Dots */
+.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.active, .dot:hover {
+  background-color: #ff2f92;
+}
+
+/* TIMELINE */
+#timeline {
+  width: 90%;
+  max-width: 700px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+/* Timeline events */
+.timeline-event {
+  position: relative;
+  padding-left: 30px;
+  margin: 30px 0;
+  border-left: 3px solid #ff9acb;
+}
+
+.timeline-event::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #ffb6d9;
+  border-radius: 50%;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #ff2f92;
+  margin-bottom: 5px;
+}
+
+.timeline-caption {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.timeline-img {
+  width: 80px;
+  border-radius: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.back-tl-btn {
+  display: block;
+  margin-top: 20px;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border: none;
+  background: #ff9acb;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* ===== MOBILE FRIENDLY ===== */
+@media (max-width: 768px) {
+
+  .slideshow-container {
+    max-width: 100%;
+    margin: 15px auto;
+    padding: 0 10px;
+  }
+
+  .heart-frame {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .heart-frame img {
+    width: 130px !important;
+  }
+
+  .caption-text {
+    font-size: 1.1rem !important;
+    margin-top: 6px;
+  }
+
+  .prev, .next {
+    padding: 8px;
+    font-size: 20px;
+    top: 45%;
+  }
+
+  .dot {
+    height: 14px;
+    width: 14px;
+    margin: 0 6px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .heart-frame {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  .heart-frame img {
+    width: 110px !important;
+  }
+
+  .caption-text {
+    font-size: 1rem !important;
+  }
+
+  .prev, .next {
+    font-size: 18px;
+    padding: 6px;
+    top: 42%;
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+  }
+}
+.heartexplosion {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp 1s ease-out;
+}
+@keyframes floatUp {
+  to { transform: translateY(-50px); opacity: 0; }
+}
+/* Fade animation */
+.fade {
+  animation: fadeEffect 0.6s;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Heart explosion visible */
+.heartexplosion {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp 1s ease-out;
+}
+
+.heartexplosion::after {
+  content: "💖";
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-50px); opacity: 0; }
+}
+/* Intro screen */
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 0.8s ease;
+}
+
+
+.intro-text {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px pink; }
+  to { text-shadow: 0 0 30px hotpink; }
+}
+
+/* Fade animation */
+.fade { animation: fadeEffect 0.6s; }
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Smooth transitions */
+.page {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+/* Heart explosion */
+.heartexplosion::after { content: "💖"; }
+
+/* Floating hearts */
+.glow-heart {
+  position: fixed;
+  font-size: 24px;
+  animation: floatHeart 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatHeart {
+  from { transform: translateY(100vh); opacity: 1; }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+/* ===== MUSIC PLAYER GLOW CARD ===== */
+.music-player {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 30px rgba(255,255,255,0.25);
+  z-index: 1000;
+}
+
+
+.player-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.player-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.play-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff4da6, #ff85c2);
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+#toggleBgMusic {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(45deg, #ff4da6, #ff85c2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+#toggleBgMusic:hover {
+  transform: scale(1.1);
+}
+
+#basket {
+  filter: drop-shadow(0 0 10px hotpink);
+  transition: transform 0.1s;
+}
+
+.catch-effect {
+  position: absolute;
+  font-size: 24px;
+  animation: pop 0.5s ease-out;
+}
+
+@keyframes pop {
+  from { transform: scale(2); opacity: 1; }
+  to { transform: scale(0.5); opacity: 0; }
+}
+
+.shake {
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+/* YES / NO CENTER FIX */
+/* CENTER YES / NO + RUNNING NO BUTTON */
+.choice-box {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+}
+
+#yes-btn {
+  position: relative;
+  z-index: 2;
+}
+
+#no-btn {
+  position: absolute;
+  z-index: 1;
+}
+/* ===== CINEMATIC INTRO ===== */
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #1a0010, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* glowing animated background hearts */
+#intro-screen::before {
+  content: "💖 💗 💕 💘 💝";
+  position: absolute;
+  font-size: 60px;
+  opacity: 0.08;
+  animation: floatHearts 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes floatHearts {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-100vh); }
+}
+
+.intro-content {
+  text-align: center;
+  animation: fadeIn 2s ease forwards;
+}
+
+.intro-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  color: white;
+  text-shadow: 0 0 25px #ff4da6;
+  margin-bottom: 10px;
+}
+
+.intro-sub {
+  font-size: 1.3rem;
+  opacity: 0.85;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.enter-btn {
+  padding: 15px 45px;
+  font-size: 1.3rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  background: linear-gradient(45deg, #ff2f92, #ff85c2);
+  box-shadow: 0 0 25px #ff4da6;
+  transition: 0.3s;
+}
+
+.enter-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #ff85c2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ===== SURPRISE PAGE SPACING FIX ===== */
+
+.boxes-section {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.features-section {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px #ff4da6;
+}
+
+/* Make grid breathe */
+.buttons-grid {
+  margin-top: 20px;
+  gap: 25px !important;
+}
+
+/* Give content space */
+#content {
+  margin-top: 40px;
+}
+#yes-btn {
+  animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.08); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.subtitle {
+  margin-top: -10px;
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+#final-btn {
+  margin-top: 60px;
+  padding: 16px 40px;
+  font-size: 1.3rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  background: linear-gradient(45deg, #ff2f92, #ff85c2);
+  box-shadow: 0 0 25px #ff4da6;
+  transition: 0.3s;
+
+  white-space: nowrap;
+}
+
+
+
+#final-btn:hover {
+  transform: scale(1.1);
+}
+/* Fix alignment of final button container */
+#surprise-page {
+  text-align: center;
+}
+
+#final-btn {
+  display: inline-block;
+}
+/* ================= MOBILE FIX FOR WHOLE SITE ================= */
+@media (max-width: 600px) {
+
+  /* general spacing */
+  .page {
+    padding: 20px 12px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* YES / NO buttons */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .buttons button {
+    width: 80%;
+    font-size: 1.1rem;
+  }
+
+  /* Surprise boxes stack nicely */
+  .boxes {
+    gap: 20px;
+  }
+
+  .box {
+    width: 90px;
+    height: 90px;
+    font-size: 2.2rem;
+  }
+
+  /* GRID BUTTONS FIX (MOST IMPORTANT) */
+  #surprise-page .buttons-grid {
+    grid-template-columns: 1fr !important; /* single column */
+    width: 100%;
+  }
+
+  #surprise-page button {
+    width: 100% !important;
+    height: auto;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  /* final button fits screen */
+  #final-btn {
+    width: 100% !important;
+  }
+
+  /* content card fits screen */
+  #content {
+    width: 100%;
+    padding: 18px;
+    margin-top: 25px;
+  }
+
+  /* music player smaller */
+  .music-player {
+    right: 10px;
+    bottom: 10px;
+    padding: 10px 15px;
+  }
+
+  .player-title {
+    font-size: 0.9rem;
+  }
+
+  .play-btn {
+    padding: 6px 12px;
+  }
+
+  /* mute button reposition */
+  #toggleBgMusic {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
